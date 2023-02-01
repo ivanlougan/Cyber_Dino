@@ -12,7 +12,7 @@
     <section id="menuStart">
         <div>
             <h1 class="h1">THE LAST DINOSAUR</h1>
-            <h3>Choose your breed</h3>
+            <h3 class="h3">Choose your breed</h3>
             <input type="radio" name="choice" id="T-rex">
             <label for="dinoOption1">T-rex</label>
             <br>
@@ -27,11 +27,43 @@
             <input type="text" id="name">
             <br>
             <br>
-            <button type="submit">Create Dinosaur</button>
-            
+            <button id="createButton" type="submit">Create Dinosaur</button>
         </div>
 
     </section>
-    
+    <section>
+        <div id="petWrapper">
+                <h1 id="petName"></h1>
+                <h2 id="petType"></h2>
+                <div id="petImage">
+                    <img src="" alt="">
+                </div>
+                <div>
+                    <p id="statusMessage"></p>
+                </div>
+            <div id="statWrapper">
+                <div>
+                    <img id="foodIcon" src="" alt=""><span>Hunger:</span><span id="hungerBar"></span>
+                </div>
+                <div>
+                    <img id="waterIcon" src="" alt=""><span>Thirst:</span><span id="thirstBar"></span>
+                </div>
+                <div>
+                    <img id="sleepIcon" src="" alt=""><span>Rest:</span><span id="restBar"></span>
+                </div>
+                <div>
+                    <img id="happyIcon" src="" alt=""><span>Happiness:</span><span id="happinessBar"></span>
+                </div>
+                <div id="buttonWrapper">
+                    <button>Fight For Meal</button>
+                    <button>Drink From River</button>
+                    <button>Sleep</button>
+                    <button>Train Child</button>
+                    <button>Bored? Level Up!</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./dino.js"></script>
 </body>
 </html>

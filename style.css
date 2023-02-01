@@ -1,11 +1,36 @@
+body {
+    background-color: rgb(132, 175, 0);
+}
+
 #menuStart {
     background-color: rgb(205, 226, 23);
     display: flex;
     justify-content: center;
+    padding: 100px;
+
 
 }
 
 .h1 {
-    font-size: 70px;
+    font-size: 60px;
     color: rgb(162, 79, 20);
+}
+
+.h3 {
+    font-size: x-large;
+    color: rgb(162, 79, 20);
+}
+
+
+
+
+#createButton {
+    background-color: rgb(157, 157, 255);
+    width: 90px;
+    height: 60px;
+    font-size: large;
+}
+
+#createButton:hover {
+    background-color:  rgb(75, 75, 250);
 }
