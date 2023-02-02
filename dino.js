@@ -7,13 +7,6 @@ class Dinosaur {
         this.happiness = 100;
     }
 
-    runFromMeteorite() {
-        this.rest -= 10;
-        this.hunger -= 10;
-        this.thirst -= 10;
-        this.happiness -= 15;
-    }
-
     sleep() {
         this.hunger -= 20;
         this.thirst -= 20;
@@ -41,6 +34,7 @@ class Dinosaur {
     }
 }
 
+
 class Trex extends Dinosaur {
     constructor(name) {
         super(name);
@@ -53,18 +47,38 @@ class Trex extends Dinosaur {
 
 
 
+var i = 0;
+function move() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("statBar");
+    var width = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+      }
+    }
+  }
+}
+
+move();
 
 
-
-
-let trex = new Trex("Puppy");
-console.log(trex);
+// let trex = new Trex("Puppy");
+// console.log(trex);
 
 
 const createDinoButton = document.getElementById("createButton");
 const menuStart = document.querySelector("#menuStart");
+const petMenu = document.getElementById("petWrapper");
 
 createDinoButton.addEventListener("click", () => {    
         menuStart.style.display = "none";
+        petMenu.style.display = "block";
     
 });
