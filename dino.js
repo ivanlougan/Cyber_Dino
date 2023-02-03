@@ -33,23 +33,6 @@ class Dinosaur {
         this.hunger -= 10;
         this.rest += 5;
     }
-
-
-    isAlive() {
-        if(this.rest <= 0){
-            someKindOfMessageAfterPetsDied.textContent = `${this.name} ran out of life and died`
-            petDied()
-        } else if(this.hunger <= 0){
-            msg.textContent = `${this.name} starved to death`
-            petDied()
-        } else if(this.thirst <= 0){
-            msg.textContent = `${this.name} died of dehydration`
-            petDied()
-        } else if(this.happiness <= 0){
-            msg.textContent = `${this.name} died of sadness`
-            petDied()
-        }
-    }
 }
 
 
@@ -101,18 +84,27 @@ const thirstBar = document.getElementById("thirstBar");
 const restBar = document.getElementById("restBar");
 const happinessBar = document.getElementById("happinessBar");
 const lifeBar = document.getElementById("lifeBar");
+let dinosName = null;
+
+
+
+function displayName(){
+    let dinosName = document.getElementById("name").value;
+    document.getElementById("petName").innerHTML = `This is ${dinosName}`;
+}
+
 
 function fightForFood() {
     hungerBar.value += 10;
-    restBar.value -= 20;
-    thirstBar.value -= 10;
-    happinessBar.value -=20;
+    restBar.value -= 5;
+    thirstBar.value -= 5;
+    happinessBar.value -=5;
 }
 
 function sleep() {
-    hungerBar.value -= 20;
+    hungerBar.value -= 5;
     restBar.value += 20;
-    thirstBar.value -= 20;
+    thirstBar.value -= 5;
     happinessBar.value += 10;
 }
 
@@ -124,101 +116,129 @@ function trainChildren() {
 }
 
 function drink() {
-    hungerBar.value -= 10;
+    hungerBar.value -= 2;
     restBar.value += 5;
-    thirstBar.value += 10;
+    thirstBar.value += 15;
 }
 
 // takes to the third layer
-function levelUp() {
-    menuStart.style.display = "none";
-    petMenu.style.display = "none";
-    runAway.style.display = "block";
-}
-
-// // status message: needs fixing
-// if (happinessBar.value <= 0){
-//     petStatus.innerHTML = `${this.name} is extremely sad.`
-// } else if (happinessBar.value <= 20){
-//     petStatus.innerHTML = `${this.name} is sad.`
-// } else if (happinessBar.value <= 40){
-//     petStatus.innerHTML = `${this.name} is feeling unhappy.`
-// } else if (happinessBar.value <= 60){
-//     petStatus.innerHTML = `${this.name} is content.`
-// } else if (happinessBar.value <= 80){
-//     petStatus.textContent = `${this.name} is happy.`
-// } else (happinessBar.value > 80);{
-//     petStatus.innerHTML = `${this.name} is extremely happy.`
+// function levelUp() {
+//     menuStart.style.display = "none";
+//     petMenu.style.display = "none";
+//     runAway.style.display = "block";
 // }
-
-// const progressHealth = document.getElementById("progressHealth").value;
 
 createDinoButton.addEventListener("click", () => { 
     
+    dinosName = document.getElementById("name").value;
+    
+    let trex = document.getElementById("trexImg");
+    let ptero = document.getElementById("pteroImage");
+    let trico = document.getElementById("triceratoImg");
+
     let dinoChoice = null;
     decreasingAllValues();
+    
+    document.querySelectorAll(".dinoClass").forEach( (element) => {        
+        if (element.checked) {
+            dinoChoice = element.id;
+        } 
+    });
+    
+    if (dinoChoice === "T-rex") {
+            trex.style.display = "block";
 
-        document.querySelectorAll(".dinoClass").forEach( (element) => {
-
-            if (element.checked) {
-                dinoChoice = element.id;
-            } 
-        });
-
-        if (dinoChoice === "T-rex") {
-
-        } else if(dinoChoice ) {
-
-
+        } else if(dinoChoice === "Pterodactyl" ) {
+            ptero.style.display = "block";
+            
+            
+        } else {
+            trico.style.display = "block";
+            
         }
-
-
+        
+        
+        
         menuStart.style.display = "none";
         petMenu.style.display = "block";
+        
+    });
 
-});
 
 
-function decreasingAllValues() {
-  var a = setInterval(function() {
+    function decreasingAllValues() {
+    petStatus.innerHTML = "";
+    var a = setInterval(function() {
     hungerBar.value = hungerBar.value - 1;
     thirstBar.value = thirstBar.value - 1;
     restBar.value = restBar.value - 1;
     happinessBar.value = happinessBar.value - 1;
-
+    
+    
     if (happinessBar.value <= 0){
-        petStatus.innerHTML = `${this.name} is extremely sad.`
+        petStatus.innerHTML = `${dinosName} is extremely sad.`;
     } else if (happinessBar.value <= 20){
-        petStatus.innerHTML = `${this.name} is sad.`
+        petStatus.innerHTML = `${dinosName} is sad.`;
     } else if (happinessBar.value <= 40){
-        petStatus.innerHTML = `${this.name} is feeling unhappy.`
+        petStatus.innerHTML = `${dinosName} is feeling unhappy.`;
     } else if (happinessBar.value <= 60){
-        petStatus.innerHTML = `${this.name} is content.`
+        petStatus.innerHTML = `${dinosName} is content.`;
     } else if (happinessBar.value <= 80){
-        petStatus.textContent = `${this.name} is happy.`
+        petStatus.innerHTML = `${dinosName} is happy.`;
     } else {
-        petStatus.innerHTML = `${this.name} is extremely happy.`
+        petStatus.innerHTML = `${dinosName} is extremely happy.`;
     }
 
-    console.log(happinessBar.value);
-
-    if (hungerBar.value == 100) {
+    if (hungerBar.value == 0) {
       clearInterval(a);
     }
+    if (hungerBar.value == 0) {
+      alert("Your pet died due to starvation!");
+    } else if (thirstBar.value == 0) {
+        alert("Your pet died due to lack of water!");
+    } else if (restBar.value == 0) {
+        alert("Your pet died due to exhaustion!");
+    } else if (happinessBar.value == 0){
+        alert("Your dino lost their will to live and died...")
+    }
+
   }, 350);
 }
 
-function levelUpDecreasinglifeValue() {
-    var a = setInterval(function() {
-        lifeBar.value = lifeBar.value - 1;
-  
-      if (lifeBar.value == 100) {
-        clearInterval(a);
-      }
-    }, 400);
+
+function finish() {
+
+    
+        menuStart.style.display = "none";
+        petMenu.style.display = "none";
+        runAway.style.display = "block";
+    
+      function levelUpDecreasinglifeValue() {
+          var a = setInterval(function() {
+              lifeBar.value = lifeBar.value - 25;
+        
+            if (lifeBar.value == 0) {
+              clearInterval(a);
+              // may need to change that text :D 
+              alert("Extinction! Your dino died!")
+            }
+          }, 400);
+        }
+
+      
+        runAwayFromMetheorite = () => {
+          lifeBar.value += 5;
+        }
+      
+      levelUpDecreasinglifeValue();
   }
 
-levelUpDecreasinglifeValue();
+
+
+
+
+
+
 
 
 
@@ -240,20 +260,17 @@ levelUpDecreasinglifeValue();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// function isAlive(){
+//     if(happinessBar.value = 0){
+//         window.alert("Your pet died from unfulfillment.")
+//     } else if (hungerBar.value = 0){
+//         window.alert("Your pet died from starvation.")
+//     } else if (restBar.value = 0){
+//         window.alert("Your pet died from lack of sleep.")
+//     } else if (thirstBar.value = 0){
+//         window.alert("Your pet died from thirst.")
+//     }
+// }
 
 
 

@@ -27,9 +27,8 @@
             <input type="text" id="name">
             <br>
             <br>
-            <button id="createButton" type="submit">Create Dinosaur</button>
+            <button onclick="displayName()" id="createButton" type="submit">Create Dinosaur</button>
         </div>
-
     </section>
     <section>
         <div id="petWrapper">
@@ -38,34 +37,34 @@
                 <div id="petImage">
                     <img class="dinoImageDisplay" id="trexImg" src="./img/trex.jpg" alt="trex">
                     <img class="dinoImageDisplay" id="pteroImage" src="./img/pterodactyl.jpg" alt="ptero">
-                    <img id="triceratoImg" src="./img/triceratops.jpg" alt="tricerat">
+                    <img class="dinoImageDisplay" id="triceratoImg" src="./img/triceratops.jpg" alt="tricerat">
                 </div>
                 <div>
                     <p id="statusMessage">Nothing for now</p>
                 </div>
             <div id="statWrapper">
                 <div>
-                    <img class = "icon" src="./img/meatIcon.png" alt="a"><span>Hunger:</span>
-                    <progress class = "statBar" id="hungerBar" name="health" value="100" max="100"></progress>
+                    <img class = "icon" src="./img/meatIcon.png" alt="a"><span id = "statName">Hunger:</span>
+                    <progress class = "statBar" id="hungerBar" name="health" value="150" max="150"></progress>
                 </div>
                 <div>
                     <img class = "icon" src="./img/waterIcon.png" alt="a"><span>Thirst:</span>
-                    <progress class = "statBar" id="thirstBar" name="thirst" value="100" max="100"></progress>
+                    <progress class = "statBar" id="thirstBar" name="thirst" value="150" max="150"></progress>
                 </div>
                 <div>
                     <img class = "icon" src="./img/sleepIcon.png" alt="a"><span>Rest:</span>
-                    <progress class = "statBar" id="restBar" name="rest" value="100" max="100"></progress>
+                    <progress class = "statBar" id="restBar" name="rest" value="150" max="150"></progress>
                 </div>
                 <div>
                     <img class = "icon" src="./img/happyIcon.jpg" alt="a"><span>Happiness:</span>
-                    <progress class = "statBar" id="happinessBar" name="happiness" value="100" max="100"></progress>
+                    <progress class = "statBar" id="happinessBar" name="happiness" value="150" max="150"></progress>
                 </div>
                 <div id="buttonWrapper">
                     <button id="eatBtn" onclick="fightForFood()">Fight For Meal</button>
                     <button id="drinkBtn" onclick="drink()">Drink From River</button>
                     <button id="restBtn" onclick="sleep()">Sleep</button>
                     <button id="trainChildBtn" onclick="trainChildren()">Train Child</button>
-                    <button id="levelUpBtn" onclick="levelUp()">Bored? Level Up!</button>
+                    <button id="levelUpBtn" onclick="finish()">Bored? Level Up!</button>
                 </div>
             </div>
         </div>
@@ -78,7 +77,7 @@
                 <p>Life:</p>
                 <progress class = "statBar" id="lifeBar" name="life" value="200" max="200"></progress>
                 
-                <button id="">RUN!!</button>
+                <button id="runButton" onclick="runAwayFromMetheorite()">RUN!!</button>
             </div>
 
         </div>

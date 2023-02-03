@@ -3,7 +3,7 @@ body {
     justify-content: center;
     background-color: rgb(125, 175, 0);
     align-items: center;
-    color: rgb(125, 175, 0);
+    color: rgb(35, 46, 7);
 }
 
 #menuStart {
@@ -36,15 +36,27 @@ body {
 #petWrapper {
     border: solid black;
     display: none;
-    width: 50%;
+    width: 100%;
 
+}
+
+#petName {
+    font-size: 10px;
 }
 
 .dinoImageDisplay {
-    max-width: 300px;
+    display: none;
+    max-width: 450px;
+    
+}
+
+#petImage {
+    display: flex;
+    justify-content: center;
 }
 
 #statusMessage {
+    display: block;
     text-align: center;
     font-size: 20px;
 }
@@ -59,6 +71,7 @@ body {
     background-color: grey;
     
 }
+
 
 #createButton {
     background-color: rgb(100, 100, 255);
@@ -77,4 +90,9 @@ body {
 
 #dinoPic {
     max-width: 600px;
+}
+
+#petName {
+    font-size: 80px;
+    color: darkorange;
 }
