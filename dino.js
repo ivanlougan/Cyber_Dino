@@ -33,10 +33,47 @@ class Dinosaur {
         this.hunger -= 10;
         this.rest += 5;
     }
+
+
+    isAlive() {
+        if(this.rest <= 0){
+            someKindOfMessageAfterPetsDied.textContent = `${this.name} ran out of life and died`
+            petDied()
+        } else if(this.hunger <= 0){
+            msg.textContent = `${this.name} starved to death`
+            petDied()
+        } else if(this.thirst <= 0){
+            msg.textContent = `${this.name} died of dehydration`
+            petDied()
+        } else if(this.happiness <= 0){
+            msg.textContent = `${this.name} died of sadness`
+            petDied()
+        }
+    }
 }
 
 
 class Trex extends Dinosaur {
+    constructor(name) {
+        super(name);
+
+    }
+    showName(name) {
+        return new Dinosaur(name);
+    }
+}
+
+class Triceratops extends Dinosaur {
+    constructor(name) {
+        super(name);
+
+    }
+    showName(name) {
+        return new Dinosaur(name);
+    }
+}
+
+class Pterodactyl extends Dinosaur {
     constructor(name) {
         super(name);
 
@@ -99,26 +136,46 @@ function levelUp() {
     runAway.style.display = "block";
 }
 
-// status message: needs fixing
-if (happinessBar.value <= 0){
-    petStatus.innerHTML = `${this.name} is extremely sad.`
-} else if (happinessBar.value <= 20){
-    petStatus.innerHTML = `${this.name} is sad.`
-} else if (happinessBar.value <= 40){
-    petStatus.innerHTML = `${this.name} is feeling unhappy.`
-} else if (happinessBar.value <= 60){
-    petStatus.innerHTML = `${this.name} is content.`
-} else if (happinessBar.value <= 80){
-    petStatus.innerHTML = `${this.name} is happy.`
-} else (happinessBar.value > 80);{
-    petStatus.innerHTML = `${this.name} is extremely happy.`
-}
+// // status message: needs fixing
+// if (happinessBar.value <= 0){
+//     petStatus.innerHTML = `${this.name} is extremely sad.`
+// } else if (happinessBar.value <= 20){
+//     petStatus.innerHTML = `${this.name} is sad.`
+// } else if (happinessBar.value <= 40){
+//     petStatus.innerHTML = `${this.name} is feeling unhappy.`
+// } else if (happinessBar.value <= 60){
+//     petStatus.innerHTML = `${this.name} is content.`
+// } else if (happinessBar.value <= 80){
+//     petStatus.textContent = `${this.name} is happy.`
+// } else (happinessBar.value > 80);{
+//     petStatus.innerHTML = `${this.name} is extremely happy.`
+// }
 
 // const progressHealth = document.getElementById("progressHealth").value;
 
-createDinoButton.addEventListener("click", () => {    
+createDinoButton.addEventListener("click", () => { 
+    
+    let dinoChoice = null;
+    decreasingAllValues();
+
+        document.querySelectorAll(".dinoClass").forEach( (element) => {
+
+            if (element.checked) {
+                dinoChoice = element.id;
+            } 
+        });
+
+        if (dinoChoice === "T-rex") {
+
+        } else if(dinoChoice ) {
+
+
+        }
+
+
         menuStart.style.display = "none";
         petMenu.style.display = "block";
+
 });
 
 
@@ -128,6 +185,22 @@ function decreasingAllValues() {
     thirstBar.value = thirstBar.value - 1;
     restBar.value = restBar.value - 1;
     happinessBar.value = happinessBar.value - 1;
+
+    if (happinessBar.value <= 0){
+        petStatus.innerHTML = `${this.name} is extremely sad.`
+    } else if (happinessBar.value <= 20){
+        petStatus.innerHTML = `${this.name} is sad.`
+    } else if (happinessBar.value <= 40){
+        petStatus.innerHTML = `${this.name} is feeling unhappy.`
+    } else if (happinessBar.value <= 60){
+        petStatus.innerHTML = `${this.name} is content.`
+    } else if (happinessBar.value <= 80){
+        petStatus.textContent = `${this.name} is happy.`
+    } else {
+        petStatus.innerHTML = `${this.name} is extremely happy.`
+    }
+
+    console.log(happinessBar.value);
 
     if (hungerBar.value == 100) {
       clearInterval(a);
@@ -145,37 +218,7 @@ function levelUpDecreasinglifeValue() {
     }, 400);
   }
 
-decreasingAllValues();
 levelUpDecreasinglifeValue();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

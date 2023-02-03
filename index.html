@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Dinosaur Game</title>
+    <title>THE LAST DINOSAUR</title>
 </head>
 <body>
 
@@ -13,13 +13,13 @@
         <div>
             <h1 class="h1">THE LAST DINOSAUR</h1>
             <h3 class="h3">Choose your breed</h3>
-            <input type="radio" name="choice" id="T-rex">
+            <input class="dinoClass" type="radio" name="choice" id="T-rex">
             <label for="dinoOption1">T-rex</label>
             <br>
-            <input type="radio" name="choice" id="Pterodactyl">
+            <input class="dinoClass" type="radio" name="choice" id="Pterodactyl">
             <label for="dinoOption1">Pterodactyl</label>
             <br>
-            <input type="radio" name="choice" id="Triceratops">
+            <input class="dinoClass" type="radio" name="choice" id="Triceratops">
             <label for="dinoOption1">Triceratops</label>
             <br>
             <br>
@@ -36,10 +36,12 @@
                 <h1 id="petName"></h1>
                 <h2 id="petType"></h2>
                 <div id="petImage">
-                    <img src="" alt="">
+                    <img class="dinoImageDisplay" id="trexImg" src="./img/trex.jpg" alt="trex">
+                    <img class="dinoImageDisplay" id="pteroImage" src="./img/pterodactyl.jpg" alt="ptero">
+                    <img id="triceratoImg" src="./img/triceratops.jpg" alt="tricerat">
                 </div>
                 <div>
-                    <p id="statusMessage"></p>
+                    <p id="statusMessage">Nothing for now</p>
                 </div>
             <div id="statWrapper">
                 <div>
@@ -55,7 +57,7 @@
                     <progress class = "statBar" id="restBar" name="rest" value="100" max="100"></progress>
                 </div>
                 <div>
-                    <img class = "icon" src="./img/happyIcon.png" alt="a"><span>Happiness:</span>
+                    <img class = "icon" src="./img/happyIcon.jpg" alt="a"><span>Happiness:</span>
                     <progress class = "statBar" id="happinessBar" name="happiness" value="100" max="100"></progress>
                 </div>
                 <div id="buttonWrapper">
@@ -76,7 +78,7 @@
                 <p>Life:</p>
                 <progress class = "statBar" id="lifeBar" name="life" value="200" max="200"></progress>
                 
-                <button>RUN!!</button>
+                <button id="">RUN!!</button>
             </div>
 
         </div>
