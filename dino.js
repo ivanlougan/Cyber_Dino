@@ -203,6 +203,10 @@ createDinoButton.addEventListener("click", () => {
     }
 
   }, 350);
+
+//   if (hungerBar.value <20){
+//     hungerBar.style.backgroundColor = red;
+//   }
 }
 
 
@@ -215,12 +219,12 @@ function finish() {
     
       function levelUpDecreasinglifeValue() {
           var a = setInterval(function() {
-              lifeBar.value = lifeBar.value - 25;
+              lifeBar.value = lifeBar.value - 18;
         
             if (lifeBar.value == 0) {
               clearInterval(a);
               // may need to change that text :D 
-              alert("Extinction! Your dino died!")
+              alert("Extinction! Your dino died!");
             }
           }, 400);
         }

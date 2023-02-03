@@ -32,8 +32,8 @@
     </section>
     <section>
         <div id="petWrapper">
-                <h1 id="petName"></h1>
-                <h2 id="petType"></h2>
+                <p id="petName"></p>
+                <p id="petType"></p>
                 <div id="petImage">
                     <img class="dinoImageDisplay" id="trexImg" src="./img/trex.jpg" alt="trex">
                     <img class="dinoImageDisplay" id="pteroImage" src="./img/pterodactyl.jpg" alt="ptero">
@@ -44,27 +44,27 @@
                 </div>
             <div id="statWrapper">
                 <div>
-                    <img class = "icon" src="./img/meatIcon.png" alt="a"><span id = "statName">Hunger:</span>
+                    <img class = "icon" src="./img/meatIcon.png" alt="a"><span class= "statName"> Hunger:</span>
                     <progress class = "statBar" id="hungerBar" name="health" value="150" max="150"></progress>
                 </div>
                 <div>
-                    <img class = "icon" src="./img/waterIcon.png" alt="a"><span>Thirst:</span>
+                    <img class = "icon" src="./img/waterIcon.png" alt="a"><span class= "statName"> Thirst:</span>
                     <progress class = "statBar" id="thirstBar" name="thirst" value="150" max="150"></progress>
                 </div>
                 <div>
-                    <img class = "icon" src="./img/sleepIcon.png" alt="a"><span>Rest:</span>
+                    <img class = "icon" src="./img/sleepIcon.png" alt="a"><span class= "statName"> Rest:</span>
                     <progress class = "statBar" id="restBar" name="rest" value="150" max="150"></progress>
                 </div>
                 <div>
-                    <img class = "icon" src="./img/happyIcon.jpg" alt="a"><span>Happiness:</span>
+                    <img class = "icon" src="./img/untitled.jpg" alt="a"><span class= "statName"> Happiness:</span>
                     <progress class = "statBar" id="happinessBar" name="happiness" value="150" max="150"></progress>
                 </div>
                 <div id="buttonWrapper">
-                    <button id="eatBtn" onclick="fightForFood()">Fight For Meal</button>
-                    <button id="drinkBtn" onclick="drink()">Drink From River</button>
-                    <button id="restBtn" onclick="sleep()">Sleep</button>
-                    <button id="trainChildBtn" onclick="trainChildren()">Train Child</button>
-                    <button id="levelUpBtn" onclick="finish()">Bored? Level Up!</button>
+                    <button class="btn" id="eatBtn" onclick="fightForFood()">Fight For Meal</button>
+                    <button class="btn" id="drinkBtn" onclick="drink()">Drink From River</button>
+                    <button class="btn" id="restBtn" onclick="sleep()">Sleep</button>
+                    <button class="btn" id="trainChildBtn" onclick="trainChildren()">Train Child</button>
+                    <button class="btn" id="levelUpBtn" onclick="finish()">Bored? Level Up!</button>
                 </div>
             </div>
         </div>
@@ -72,6 +72,9 @@
 
     <section>
         <div id="runAway">
+            <div id="runAwayFromMet">
+                <h1>RUN FROM THE METEORITE!!</h1>
+            </div>
             <div>
                 <img id="dinoPic" src="./img/dino.jpg" alt="dino">
                 <p>Life:</p>
